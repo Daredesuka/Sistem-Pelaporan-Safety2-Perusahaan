@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('assets/images/iconk3.png')}}">
     <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
     @yield('css')
 </head>
 
-<body data-topbar="dark" data-layout="horizontal">
+<body data-topbar="light" data-layout="horizontal">
     <div id="layout-wrapper">
 
         <header id="page-topbar">
             <div class="navbar-header">
                 <div class="d-flex">
                     <div class="navbar-brand-box">
-                        <a href="index.html" class="logo logo-dark">
+                        <a href="/" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="{{asset('assets/images/logo.svg')}}" alt="" height="22">
                             </span>

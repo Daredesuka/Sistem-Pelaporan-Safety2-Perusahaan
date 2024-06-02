@@ -2,7 +2,7 @@
 <html lang="en">
 @include('admin.partials.head')
 
-<body data-sidebar="dark">
+<body data-sidebar="light">
     <div id="layout-wrapper">
         @include('admin.partials.header')
         <div class="vertical-menu">

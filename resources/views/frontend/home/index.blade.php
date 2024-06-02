@@ -7,7 +7,7 @@
     <title>Company Reporting Safety</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('assets/images/iconk3.png')}}">
 
     <link href="{{asset('frontend/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
     <link

@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Struktur dari tabel `complaint`
 --
 
-CREATE TABLE `complaint` (
+CREATE TABLE `report` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `date_complaint` date NOT NULL,
   `nik` varchar(255) NOT NULL,
