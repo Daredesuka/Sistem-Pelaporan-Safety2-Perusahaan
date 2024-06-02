@@ -16,28 +16,6 @@
                                 <span key="t-dashboard">Dashboard</span>
                             </a>
                         </li>
-                        {{-- <li>
-                                <a href="{{route('dashboard.index')}}" class="waves-effect">
-                        <i class="bx bx-volume-low"></i>
-                        <span key="t-pelaporan">Pelaporan</span>
-                        </a>
-                        </li>
-                        <li>
-                            <a href="{{route('dashboard.index')}}" class="waves-effect">
-                                <i class="bx bxs-user-badge"></i>
-                                <span key="t-karyawan">Karyawan</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bxs-user-detail"></i>
-                                <span key="t-user">Manajemen Users</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('users.create')}}" key="t-products">Add User</a></li>
-                                <li><a href="{{route('users.index')}}" key="t-product-detail">List Users</a></li>
-                            </ul>
-                        </li> --}}
                         <li>
                             <a href="{{route('reports.index')}}" class="waves-effect">
                                 <i class="bx bx-volume-low"></i>

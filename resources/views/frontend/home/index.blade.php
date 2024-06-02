@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Company Reporting Safety</title>
+    <title>Company Safety Reporting</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <link rel="shortcut icon" href="{{asset('assets/images/iconk3.png')}}">
@@ -24,11 +24,11 @@
 
 <body>
 
-    <!-- ======= Top Bar ======= -->
+    <!-- ======= Top Bar 
     <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
         <div class="container d-flex">
         </div>
-    </div>
+    </div> ======= -->
 
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
@@ -43,6 +43,7 @@
                     <li class="active"><a href="{{url('/')}}">Home</a></li>
                     <li><a href="#procedures">Procedures</a></li>
                     <li><a href="{{url('user/report/add')}}">Report</a></li>
+                    <li><a href="{{url('admin/login')}}">Admin</a></li>
 
 
                 </ul>

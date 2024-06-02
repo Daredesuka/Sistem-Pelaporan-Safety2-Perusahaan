@@ -16,12 +16,12 @@ class UsersSeeder extends Seeder
     public function run()
     {
         $init = new User;
-        $init->officer_name = "Administrator";
-        $init->username = "Administrator";
-        $init->email = "admin@gmail.com";
-        $init->phone_number = "088228740010";
+        $init->officer_name = "Admin";
+        $init->username = "admin123";
+        $init->email = "admin123@gmail.com";
+        $init->phone_number = "087756432188";
         $init->photo = "12";
-        $init->password = Hash::make("123456");
+        $init->password = Hash::make("admin123456");
         $init->level_id = '1';
         $init->save();
 

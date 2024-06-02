@@ -104,6 +104,14 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
+                                        <label for="lokasi_kejadian" class="col-md-2 col-form-label">Lokasi
+                                            Kejadian</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class=" form-control" rows="8" cols="50"
+                                                name="lokasi_kejadian" id="lokasi_kejadian">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
                                         <label for="photo" class="col-md-2 col-form-label">Photo</label>
                                         <div class="col-md-10">
                                             <input class="form-control" type="file" id="photo" name="photo">

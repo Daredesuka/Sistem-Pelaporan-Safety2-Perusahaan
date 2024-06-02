@@ -75,7 +75,7 @@
                             <div class="card-body">
                                 <div class="media">
                                     <div class="media-body">
-                                        <p class="text-muted fw-medium">Reports</p>
+                                        <p class="text-muted fw-medium">Total Reports</p>
                                         <h4 class="mb-0">{{$reports}}</h4>
                                     </div>
 

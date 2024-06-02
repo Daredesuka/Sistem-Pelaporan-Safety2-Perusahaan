@@ -24,7 +24,11 @@ class FrontendController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|min:2',
+            'status_karyawan' => 'required',
+            'departemen' => 'required',
+            'kategori_bahaya' => 'required',
             'contents_of_the_report' => 'required|min:2',
+            'lokasi_kejadian' => 'required|min:2',
             'photo' => 'required',
         ]);
 
@@ -34,6 +38,7 @@ class FrontendController extends Controller
         $report->status_karyawan = $request->status_karyawan;
         $report->departemen = $request->departemen;
         $report->kategori_bahaya = $request->kategori_bahaya;
+        $report->lokasi_kejadian = $request->lokasi_kejadian;
         $photo = $request->file('photo');
         $tujuan_upload = 'avatar_report';
         $photo_name = time() . "_" . $photo->getClientOriginalName();
@@ -41,9 +46,6 @@ class FrontendController extends Controller
         $report->photo = $photo_name;
         $report->status = '0';
         $report->date_report = Date::now()->format('Y-m-d');
-        
-        // Hapus assignment society_id
-        $report->nik = 'default_nik';
         
         $report->save();
 

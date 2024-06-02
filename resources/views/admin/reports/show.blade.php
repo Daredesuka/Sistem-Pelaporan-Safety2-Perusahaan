@@ -51,11 +51,35 @@
                                             <br>
                                             <tbody>
                                                 <tr>
-                                                    <td>NIK</td>
+                                                    <td>Nama</td>
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{$report->nik}}</a>
+                                                            data-title="Enter username">{{ $report->name}}</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Status Karyawan</td>
+                                                    <td>
+                                                        <a href="javascript::void(0)" id="inline-username"
+                                                            data-type="text" data-pk="1"
+                                                            data-title="Enter username">{{ $report->status_karyawan}}</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Departemen</td>
+                                                    <td>
+                                                        <a href="javascript::void(0)" id="inline-username"
+                                                            data-type="text" data-pk="1"
+                                                            data-title="Enter username">{{ $report->departemen}}</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kategori Bahaya</td>
+                                                    <td>
+                                                        <a href="javascript::void(0)" id="inline-username"
+                                                            data-type="text" data-pk="1"
+                                                            data-title="Enter username">{{ $report->kategori_bahaya}}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -93,6 +117,14 @@
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
                                                             data-title="Enter username">{{$report->contents_of_the_report}}</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lokasi Kejadian</td>
+                                                    <td>
+                                                        <a href="javascript::void(0)" id="inline-username"
+                                                            data-type="text" data-pk="1"
+                                                            data-title="Enter username">{{ $report->lokasi_kejadian }}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>

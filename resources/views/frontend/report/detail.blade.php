@@ -88,14 +88,6 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Phone Number</td>
-                                                    <td>
-                                                        <a href="javascript::void(0)" id="inline-username"
-                                                            data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ $report->phone_number ?? 'N/A' }}</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
                                                     <td>Date</td>
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
@@ -128,6 +120,14 @@
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
                                                             data-title="Enter username">{{ $report->contents_of_the_report }}</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lokasi Kejadian</td>
+                                                    <td>
+                                                        <a href="javascript::void(0)" id="inline-username"
+                                                            data-type="text" data-pk="1"
+                                                            data-title="Enter username">{{ $report->lokasi_kejadian }}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>

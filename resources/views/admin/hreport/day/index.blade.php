@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Report Day | Laundry Application')
+@section('title','History Report | Company Safety Report')
 @section('css')
 <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
     type="text/css" />
@@ -81,8 +81,12 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>NIK</th>
-                                    <th>Pelaporan</th>
+                                    <th>Nama</th>
+                                    <th>Status Karyawan</th>
+                                    <th>Departemen</th>
+                                    <th>Kategori Bahaya</th>
+                                    <th>Isi Laporan</th>
+                                    <th>Lokasi Kejadian</th>
                                     <th>Date</th>
                                     <th>Status</th>
                                 </tr>
@@ -93,8 +97,12 @@
                                 @foreach ($data as $item)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->nik}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->status_karyawan}}</td>
+                                    <td>{{$item->departemen}}</td>
+                                    <td>{{$item->kategori_bahaya}}</td>
                                     <td>{{$item->contents_of_the_report}}</td>
+                                    <td>{{$item->lokasi_kejadian}}</td>
                                     <td>{{$item->date_report}}</td>
                                     @if ($item->status == "0")
                                     <td><span class="badge rounded-pill bg-danger">Unprocessed</span></td>
