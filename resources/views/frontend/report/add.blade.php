@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-@section('title','Add Complaint')
+@section('title','Add Report')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
@@ -8,11 +8,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Add Complaint</h4>
+                    <h4 class="mb-sm-0 font-size-18">Add Report</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item active">Add Complaint</li>
+                            <li class="breadcrumb-item active">Add Report</li>
                         </ol>
                     </div>
 
@@ -42,7 +42,7 @@
         </div>
         <br>
         <div class="row">
-            <form action="{{url('user/complaint/save')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{url('user/report/save')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-12">
                     <div class="row">

@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\ReportController;
+use App\Http\Controllers\HistoryReportController;
 use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -26,10 +26,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'welcome']);
 
 Route::get('user/home', [FrontendController::class, 'home'])->name('user_home');
-Route::get('user/complaint/add', [FrontendController::class, 'add_complaint'])->name('add_complaint');
-Route::post('user/complaint/save', [FrontendController::class, 'save_complaint'])->name('save_complaint');
-Route::get('user/complaint', [FrontendController::class, 'complaint'])->name('complaint');
-Route::get('user/complaint/detail/{id}', [FrontendController::class, 'detail_complaint'])->name('detail_complaint');
+Route::get('user/report/add', [FrontendController::class, 'add_report'])->name('add_report');
+Route::post('user/report/save', [FrontendController::class, 'save_report'])->name('save_report');
+Route::get('user/report', [FrontendController::class, 'report'])->name('report');
+Route::get('user/report/detail/{id}', [FrontendController::class, 'detail_report'])->name('detail_report');
 
 Route::get('admin/login', [LoginController::class, 'showFormLogin'])->name('login');
 Route::post('admin/login', [LoginController::class, 'login']);
@@ -41,24 +41,23 @@ Route::group(['middleware' => ['auth', 'checkRole:1'], 'prefix' => 'admin'], fun
     Route::get('users/edit/{id}', [UsersController::class, 'edit']);
     Route::post('users/update/{id}', [UsersController::class, 'update']);
     Route::delete('users/selected-users', [UsersController::class, 'deleteCheckedStudents'])->name('users.deleteSelected');
-    Route::resource('complaints', ComplaintController::class);
-    Route::get('complaints/delete/{id}', [ComplaintController::class, 'destroy']);
-    Route::get('complaints/{id}', [ComplaintController::class, 'detail']);
-    Route::get('complaints/show/{id}', [ResponseController::class, 'show']);
-    Route::post('complaints/save/{id}', [ResponseController::class, 'save']);
-    Route::delete('complaints/selected-complaints', [ComplaintController::class, 'deleteCheckedStudents'])->name('complaints.deleteSelected');
+    Route::resource('reports', ReportController::class);
+    Route::get('reports/delete/{id}', [ReportController::class, 'destroy']);
+    Route::get('reports/{id}', [ReportController::class, 'detail']);
+    Route::get('reports/show/{id}', [ResponseController::class, 'show']);
+    Route::post('reports/save/{id}', [ResponseController::class, 'save']);
+    Route::delete('reports/selected-reports', [ReportController::class, 'deleteCheckedStudents'])->name('reports.deleteSelected');
 
-    Route::get('report/day', [ReportController::class, 'day']);
-    Route::get('report/day/search', [ReportController::class, 'day_search']);
-    Route::get('report/day/cetakpdf', [ReportController::class, 'day_pdf']);
+    Route::get('hreport/day', [HistoryReportController::class, 'day']);
+    Route::get('hreport/day/search', [HistoryReportController::class, 'day_search']);
+    Route::get('hreport/day/cetakpdf', [HistoryReportController::class, 'day_pdf']);
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:1,2'], 'prefix' => 'admin'], function () {
     Route::resource('dashboard', DashboardController::class);
-    Route::resource('complaints', ComplaintController::class);
-    Route::get('complaints/{id}', [ComplaintController::class, 'detail']);
-    Route::get('complaints/show/{id}', [ResponseController::class, 'show']);
-    Route::post('complaints/save/{id}', [ResponseController::class, 'save']);
-    //Route::delete('complaints/{id}', [ComplaintController::class, 'destroy'])->name('complaints.destroy');
+    Route::resource('reports', ReportController::class);
+    Route::get('reports/{id}', [ReportController::class, 'detail']);
+    Route::get('reports/show/{id}', [ResponseController::class, 'show']);
+    Route::post('reports/save/{id}', [ResponseController::class, 'save']);
 });
 Route::get('/home', 'HomeController@index')->name('home');

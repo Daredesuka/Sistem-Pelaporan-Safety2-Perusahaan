@@ -1,12 +1,12 @@
 @extends('admin.layouts.main')
-@section('title','Management User | Public Complaints')
+@section('title','Management User | Company Report Safety')
 @section('css')
 
 @endsection
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
-        
+
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -22,15 +22,16 @@
         </div>
         <div class="row">
             <div class="col-12">
-                
-                <a href="{{route('users.index')}}" class="button"><i class="bx bx-arrow-back label-icon"></i> &nbsp;&nbsp;Back To List User</a>
+
+                <a href="{{route('users.index')}}" class="button"><i class="bx bx-arrow-back label-icon"></i>
+                    &nbsp;&nbsp;Back To List User</a>
                 <br>
                 <br>
                 @if ($errors->any())
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <ul>
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                        <li>{{ $error }}</li>
                         @endforeach
                     </ul>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -57,32 +58,37 @@
                                     <div class="mb-3 row">
                                         <label for="officer_name" class="col-md-2 col-form-label">Officer Name</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" id="officer_name" name="officer_name" value="{{$user->officer_name}}">
+                                            <input class="form-control" type="text" id="officer_name"
+                                                name="officer_name" value="{{$user->officer_name}}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="username" class="col-md-2 col-form-label">Username</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" id="username" name="username" value="{{$user->username}}">
+                                            <input class="form-control" type="text" id="username" name="username"
+                                                value="{{$user->username}}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="email" class="col-md-2 col-form-label">Email</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="email" id="email" name="email" value="{{$user->email}}">
+                                            <input class="form-control" type="email" id="email" name="email"
+                                                value="{{$user->email}}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="phone_number" class="col-md-2 col-form-label">Phone Number</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" id="phone_number" name="phone_number" value="{{$user->phone_number}}">
+                                            <input class="form-control" type="number" id="phone_number"
+                                                name="phone_number" value="{{$user->phone_number}}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="photo" class="col-md-2 col-form-label">Photo</label>
                                         <div class="col-md-10">
                                             <input class="form-control" type="file" id="photo" name="photo">
-                                            <small><span>(Leave blank if you don't want to change the photo)</span></small>
+                                            <small><span>(Leave blank if you don't want to change the
+                                                    photo)</span></small>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -91,7 +97,8 @@
                                             <select class="form-select select2" id="level_id" name="level_id">
                                                 <option disabled selected>--Select--</option>
                                                 @foreach ($level as $row)
-                                                <option @if($row->id==$user->level_id) selected @endif value="{{ $row->id}}">{{$row->name }}</option>
+                                                <option @if($row->id==$user->level_id) selected @endif
+                                                    value="{{ $row->id}}">{{$row->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -100,7 +107,8 @@
                                         <label for="password" class="col-md-2 col-form-label">Password</label>
                                         <div class="col-md-10">
                                             <input class="form-control" type="password" id="password" name="password">
-                                            <small><span>(Leave blank if you don't want to change the password)</span></small>
+                                            <small><span>(Leave blank if you don't want to change the
+                                                    password)</span></small>
                                         </div>
                                     </div>
 
@@ -124,7 +132,7 @@
                 </div>
             </form>
         </div>
-        
+
     </div>
 </div>
 @endsection

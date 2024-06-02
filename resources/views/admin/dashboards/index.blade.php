@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Dashboard | Public Complaints')
+@section('title','Dashboard | Public Reports')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
@@ -32,7 +32,7 @@
                             <div class="col-7">
                                 <div class="text-primary p-3">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p>Public Complaints</p>
+                                    <p>Public Reports</p>
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
@@ -75,8 +75,8 @@
                             <div class="card-body">
                                 <div class="media">
                                     <div class="media-body">
-                                        <p class="text-muted fw-medium">Complaints</p>
-                                        <h4 class="mb-0">{{$complaints}}</h4>
+                                        <p class="text-muted fw-medium">Reports</p>
+                                        <h4 class="mb-0">{{$reports}}</h4>
                                     </div>
 
                                     <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
@@ -171,7 +171,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <h4 class="card-title">Annual Complaint Graph</h4>
+                        <h4 class="card-title">Annual Report Graph</h4>
                         <div class="embed-responsive embed-responsive-16by9">
                             <canvas class="embed-responsive-item" id="myChartt"></canvas>
                         </div>
@@ -186,7 +186,7 @@
 <?php
 foreach ($tahun as $row) {
     $th[] = $row->Tahun;
-    $complaint1[] = $row->pay_total;
+    $report1[] = $row->pay_total;
     }    
 ?>
 
@@ -209,8 +209,8 @@ var myChart = new Chart(ctx, {
 
         labels: <?php echo json_encode($th)?>,
         datasets: [{
-            label: 'Total Complaint',
-            data: <?php echo json_encode($complaint1)?>,
+            label: 'Total Report',
+            data: <?php echo json_encode($report1)?>,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

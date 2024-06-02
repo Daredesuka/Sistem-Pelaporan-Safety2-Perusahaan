@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Print Day</title>
+    <title>Print History Report</title>
 </head>
 
 <body>
@@ -26,8 +26,8 @@
                 <td colspan="6" style="font-family: sans-serif;text-align: center;">
 
                     <div style="text-align: center;">
-                        <h3>Report Day </h3>
-                        <h3>OPCS</h3>
+                        <h3>History Report </h3>
+                        <h3>CSR</h3>
                     </div>
                 </td>
             </tr>
@@ -49,7 +49,7 @@
                 <td>{{$loop->iteration}}</td>
                 <td>{{$item->nik}}</td>
                 <td>{{$item->contents_of_the_report}}</td>
-                <td>{{$item->date_complaint}}</td>
+                <td>{{$item->date_report}}</td>
                 @if ($item->status == "0")
                 <td><span class="badge rounded-pill bg-danger">Unprocessed</span></td>
                 @elseif($item->status == 'process')

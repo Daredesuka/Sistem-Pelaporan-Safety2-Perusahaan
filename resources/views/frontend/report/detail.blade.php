@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-@section('title','Detail Complaint')
+@section('title','Detail Report')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
@@ -8,11 +8,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Detail Complaint</h4>
+                    <h4 class="mb-sm-0 font-size-18">Detail Report</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item active">Detail Complaint</li>
+                            <li class="breadcrumb-item active">Detail Report</li>
                         </ol>
                     </div>
 
@@ -49,7 +49,7 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Detail Complaint</h4>
+                                    <h4 class="card-title">Detail Report</h4>
 
                                     <div class="table-responsive">
                                         <table class="table table-striped table-nowrap mb-0">
@@ -60,7 +60,7 @@
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ $complaint->name}}</a>
+                                                            data-title="Enter username">{{ $report->name}}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -68,7 +68,7 @@
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ $complaint->status_karyawan}}</a>
+                                                            data-title="Enter username">{{ $report->status_karyawan}}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -76,7 +76,7 @@
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ $complaint->departemen}}</a>
+                                                            data-title="Enter username">{{ $report->departemen}}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -84,7 +84,7 @@
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ $complaint->kategori_bahaya}}</a>
+                                                            data-title="Enter username">{{ $report->kategori_bahaya}}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -92,7 +92,7 @@
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ $complaint->phone_number ?? 'N/A' }}</a>
+                                                            data-title="Enter username">{{ $report->phone_number ?? 'N/A' }}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -100,15 +100,15 @@
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ date('d F Y H:i:s', strtotime($complaint->created_at)) }}</a>
+                                                            data-title="Enter username">{{ date('d F Y H:i:s', strtotime($report->created_at)) }}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Status</td>
                                                     <td>
-                                                        @if ($complaint->status == '0')
+                                                        @if ($report->status == '0')
                                                         <span class="badge rounded-pill bg-danger">Unprocess</span>
-                                                        @elseif($complaint->status == "process")
+                                                        @elseif($report->status == "process")
                                                         <span class="badge rounded-pill bg-primary">Process</span>
                                                         @else
                                                         <span class="badge rounded-pill bg-success">Finished</span>
@@ -118,7 +118,7 @@
                                                 <tr>
                                                     <td>Photo</td>
                                                     <td>
-                                                        <img src="{{ url('avatar_complaint/', $complaint->photo) }}"
+                                                        <img src="{{ url('avatar_report/', $report->photo) }}"
                                                             width="500px">
                                                     </td>
                                                 </tr>
@@ -127,7 +127,7 @@
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ $complaint->contents_of_the_report }}</a>
+                                                            data-title="Enter username">{{ $report->contents_of_the_report }}</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -135,7 +135,7 @@
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
-                                                            data-title="Enter username">{{ $complaint->Response->response }}</a>
+                                                            data-title="Enter username">{{ $report->Response->response }}</a>
                                                     </td>
                                                 </tr>
                                             </tbody>

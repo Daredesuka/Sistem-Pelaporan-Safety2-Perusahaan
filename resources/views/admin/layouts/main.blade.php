@@ -19,13 +19,13 @@
                         {{-- <li>
                                 <a href="{{route('dashboard.index')}}" class="waves-effect">
                         <i class="bx bx-volume-low"></i>
-                        <span key="t-pengaduan">Pengaduan</span>
+                        <span key="t-pelaporan">Pelaporan</span>
                         </a>
                         </li>
                         <li>
                             <a href="{{route('dashboard.index')}}" class="waves-effect">
                                 <i class="bx bxs-user-badge"></i>
-                                <span key="t-masyarakat">Masyarakat</span>
+                                <span key="t-karyawan">Karyawan</span>
                             </a>
                         </li>
                         <li>
@@ -39,9 +39,9 @@
                             </ul>
                         </li> --}}
                         <li>
-                            <a href="{{route('complaints.index')}}" class="waves-effect">
+                            <a href="{{route('reports.index')}}" class="waves-effect">
                                 <i class="bx bx-volume-low"></i>
-                                <span key="t-transactions">Complaints</span>
+                                <span key="t-transactions">Reports</span>
                             </a>
                         </li>
                         @if(Auth::user()->level_id == '1')
@@ -59,9 +59,9 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{url('admin/report/day')}}" class="waves-effect">
+                            <a href="{{url('admin/hreport/day')}}" class="waves-effect">
                                 <i class="bx bx-tone"></i>
-                                <span key="t-transactions">Report</span>
+                                <span key="t-transactions">History Report</span>
                             </a>
                         </li>
                         @endif
@@ -81,11 +81,10 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
+                                Design & Develop by Ogie Kukuh Y
                             </div>
                         </div>
                     </div>
-                </div>
             </footer>
         </div>
     </div>

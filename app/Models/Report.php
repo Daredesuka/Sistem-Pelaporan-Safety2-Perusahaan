@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Complaint extends Model
+class Report extends Model
 {
     use HasFactory;
 
-    protected $table = 'complaint';
+    protected $table = 'report';
     protected $primaryKey = 'id';
     protected $guarded = [];
 
     public function Response()
     {
-        return $this->hasOne(Response::class, 'complaint_id', 'id');
+        return $this->hasOne(Response::class, 'report_id', 'id');
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Complaint;
+use App\Models\Report;
 use App\Models\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,22 +12,22 @@ class ResponseController extends Controller
 {
     public function show($id)
     {
-        $data['item'] = Complaint::with(['Response'])->findOrFail($id);
-        return view('admin.complaints.edit', $data);
+        $data['item'] = Report::with(['Response'])->findOrFail($id);
+        return view('admin.reports.edit', $data);
     }
 
     public function save(Request $request, $id)
     {
-        $complaint = Complaint::findOrFail($id);
-        $complaint->status = $request->status;
-        $complaint->save();
-        $response = Response::where('complaint_id', $id)->first();
-        $complaint_id = $response->id;
-        $responses = $response->findOrFail($complaint_id);
+        $report = Report::findOrFail($id);
+        $report->status = $request->status;
+        $report->save();
+        $response = Response::where('report_id', $id)->first();
+        $report_id = $response->id;
+        $responses = $response->findOrFail($report_id);
         $responses->response_date = Date::now()->format('Y-m-d');
         $responses->user_id = Auth::user()->id;
         $responses->response = $request->response;
         $responses->save();
-        return redirect()->route('complaints.index')->with(['success' => 'Response has been updated']);
+        return redirect()->route('reports.index')->with(['success' => 'Response has been updated']);
     }
 }

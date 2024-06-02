@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Login | Public Complaints</title>
+    <title>Login | Company Report Safety</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" />
     <meta name="author" />
@@ -124,7 +124,7 @@
                         <div>
                             <p>© <script>
                                 document.write(new Date().getFullYear())
-                                </script> Crafted with <i class="mdi mdi-heart text-danger"></i> by Feyto Dewangga</p>
+                                </script> Crafted with <i class="mdi mdi-heart text-danger"></i> by Ogie Kukuh Y</p>
                         </div>
                     </div>
                 </div>

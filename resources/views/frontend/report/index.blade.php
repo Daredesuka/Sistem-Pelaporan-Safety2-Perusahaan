@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-@section('title','Complaint')
+@section('title','Report')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
@@ -27,7 +27,7 @@
                             <div class="col-7">
                                 <div class="text-primary p-3">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p>Company Safety Reporting</p>
+                                    <p>Company Report Safety</p>
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
@@ -46,8 +46,8 @@
                             <div class="card-body">
                                 <div class="media">
                                     <div class="media-body">
-                                        <p class="text-muted fw-medium">Complaints</p>
-                                        <h4 class="mb-0">{{$count_complaint}}</h4>
+                                        <p class="text-muted fw-medium">Reports</p>
+                                        <h4 class="mb-0">{{$count_report}}</h4>
                                     </div>
 
                                     <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">

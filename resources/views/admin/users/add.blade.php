@@ -1,12 +1,12 @@
 @extends('admin.layouts.main')
-@section('title','Management User | Public Complaints')
+@section('title','Management User | Company Report Safety')
 @section('css')
 
 @endsection
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
-        
+
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -22,15 +22,16 @@
         </div>
         <div class="row">
             <div class="col-12">
-                
-                <a href="{{route('users.index')}}" class="button"><i class="bx bx-arrow-back label-icon"></i> &nbsp;&nbsp;Back To List User</a>
+
+                <a href="{{route('users.index')}}" class="button"><i class="bx bx-arrow-back label-icon"></i>
+                    &nbsp;&nbsp;Back To List User</a>
                 <br>
                 <br>
                 @if ($errors->any())
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <ul>
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                        <li>{{ $error }}</li>
                         @endforeach
                     </ul>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -57,25 +58,29 @@
                                     <div class="mb-3 row">
                                         <label for="name" class="col-md-2 col-form-label">Officer Name</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" id="officer_name" name="officer_name" value="{{old('officer_name')}}">
+                                            <input class="form-control" type="text" id="officer_name"
+                                                name="officer_name" value="{{old('officer_name')}}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="username" class="col-md-2 col-form-label">Username</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" id="username" name="username" value="{{old('username')}}">
+                                            <input class="form-control" type="text" id="username" name="username"
+                                                value="{{old('username')}}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="email" class="col-md-2 col-form-label">Email</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="email" id="email" name="email" value="{{old('email')}}">
+                                            <input class="form-control" type="email" id="email" name="email"
+                                                value="{{old('email')}}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="phone_number" class="col-md-2 col-form-label">Phone Number</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="number" id="phone_number" name="phone_number">
+                                            <input class="form-control" type="number" id="phone_number"
+                                                name="phone_number">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -101,10 +106,10 @@
                                             <input class="form-control" type="password" id="password" name="password">
                                         </div>
                                     </div>
-                                    
-                                    
-                                    
-                                    
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -116,8 +121,10 @@
                                         Mohon lengkapi form yang sudah di sediakan untuk dapat melanjutkan proses !
                                     </div>
                                     <br>
-                                    <button name="submit" type="submit" class="btn btn-primary" value="save">Save</button>
-                                    <button name="submit" type="submit" class="btn btn-primary" value="more">Save & More</button>
+                                    <button name="submit" type="submit" class="btn btn-primary"
+                                        value="save">Save</button>
+                                    <button name="submit" type="submit" class="btn btn-primary" value="more">Save &
+                                        More</button>
                                     <a href="{{route('users.index')}}" class="btn btn-danger">Cancel</a>
                                 </div>
                             </div>
@@ -126,7 +133,7 @@
                 </div>
             </form>
         </div>
-        
+
     </div>
 </div>
 @endsection

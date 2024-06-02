@@ -13,8 +13,8 @@ class Response extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function Complaint()
+    public function Report()
     {
-        return $this->hasOne(Complaint::class, 'complaint_id', 'id');
+        return $this->hasOne(Report::class, 'report_id', 'id');
     }
 }

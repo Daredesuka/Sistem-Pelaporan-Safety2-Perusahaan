@@ -2,46 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Complaint;
-use Request;
-use DB;
-use PDF;
-use App;
+use App\Models\Report;
+use App\Models\Response;
+use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-    public function day()
+    public function index()
     {
-        $data['data'] = Complaint::all();
-        return view('admin.report.day.index', $data);
+        $data['reports'] = Report::all();
+        return view('admin.reports.index', $data);
     }
-
-    public function day_search()
+    public function show($id)
     {
-        $date1 = Request::get('date1');
-        $date2 = Request::get('date2');
-        $query = DB::table('complaint')->whereBetween('date_complaint', [$date1, $date2])
-            ->orderBy('id', 'desc')
-            ->get();
-
-        $data['data']   =   $query;
-
-        return view('admin.report.day.index', $data);
+        $data['report'] = Report::findOrFail($id);
+        $data['response'] = Response::where('report_id', $id)->first();
+        return view('admin.reports.show', $data);
     }
-
-    public function day_pdf()
-    {
-        $date1 = Request::get('date1');
-        $date2 = Request::get('date2');
-        $query = DB::table('complaint')
-            ->whereBetween('date_complaint', [$date1, $date2])
-            ->orderBy('id', 'asc')
-            ->get();
-
-        $data['data']   =   $query;
-        $view = view('admin.report.day.print_data', $data)->render();
-        $pdf = App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-        return $pdf->stream('Report Day.pdf');
+    public function destroy($id)
+{
+    $report = Report::find($id);
+    if ($report) {
+        $report->delete();
+        return redirect()->back()->with('success', 'Report has been deleted successfully.');
+    } else {
+        return redirect()->back()->with('error', 'Report not found.');
     }
+}
+
 }

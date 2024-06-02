@@ -1,9 +1,12 @@
 @extends('frontend.layouts.main')
-@section('title','Complaint')
+@section('title','Report')
 @section('css')
-<link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
+    type="text/css" />
+<link href="{{asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet"
+    type="text/css" />
+<link href="{{asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet"
+    type="text/css" />
 <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
@@ -14,11 +17,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Complaint History</h4>
+                    <h4 class="mb-sm-0 font-size-18">Report History</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item active">Complaint History</li>
+                            <li class="breadcrumb-item active">Report History</li>
                         </ol>
                     </div>
 
@@ -30,38 +33,38 @@
                 <div class="card">
                     <div class="card-body">
 
-                        
+
 
                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                             <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Photo</th>
-                                <th>Date Complaints</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Photo</th>
+                                    <th>Date Reports</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
                             </thead>
 
 
                             <tbody>
-                                @foreach ($complaint as $row)
+                                @foreach ($report as $row)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td><img src="{{url('avatar_complaint/',$row->photo)}}" width="120px"></td>
+                                    <td><img src="{{url('avatar_report/',$row->photo)}}" width="120px"></td>
                                     <td>{{date('d F Y H:i:s',strtotime($row->created_at))}}</td>
                                     @if ($row->status == '0')
-                                        <td><span class="badge rounded-pill bg-danger">Unprocess</span></td>
+                                    <td><span class="badge rounded-pill bg-danger">Unprocess</span></td>
                                     @elseif($row->status == "process")
-                                        <td><span class="badge rounded-pill bg-primary">Process</span></td>
-                                    @else 
-                                        <td><span class="badge rounded-pill bg-success">Finished</span></td>
+                                    <td><span class="badge rounded-pill bg-primary">Process</span></td>
+                                    @else
+                                    <td><span class="badge rounded-pill bg-success">Finished</span></td>
                                     @endif
                                     <td>
-                                        <a href="{{url('user/complaint/detail/'.$row->id)}}" class="btn btn-info">
+                                        <a href="{{url('user/report/detail/'.$row->id)}}" class="btn btn-info">
                                             Detail
                                         </a>
-                                       
+
                                     </td>
                                 </tr>
                                 @endforeach
@@ -73,7 +76,7 @@
             </div>
         </div>
 
-        
+
     </div>
 </div>
 @endsection
@@ -82,6 +85,6 @@
 <script src="{{asset('assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>  
+<script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>
 <script src="{{asset('assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 @endpush

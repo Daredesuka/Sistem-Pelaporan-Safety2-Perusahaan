@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Complaints | Public Complaints')
+@section('title','Reports | Public Reports')
 @section('css')
 <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
     type="text/css" />
@@ -16,11 +16,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Complaints</h4>
+                    <h4 class="mb-sm-0 font-size-18">Reports</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item active">Complaints</li>
+                            <li class="breadcrumb-item active">Reports</li>
                         </ol>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                                     <th>No</th>
                                     <th>Photo</th>
                                     <th>Name</th>
-                                    <th>Date Complaints</th>
+                                    <th>Date Reports</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -57,10 +57,10 @@
 
 
                             <tbody>
-                                @foreach ($complaints as $row)
+                                @foreach ($reports as $row)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td><img src="{{url('avatar_complaint/',$row->photo)}}" width="100px"></td>
+                                    <td><img src="{{url('avatar_report/',$row->photo)}}" width="100px"></td>
                                     <td>{{$row->name}}</td>
                                     <td>{{date('d F Y H:i:s',strtotime($row->created_at))}}</td>
                                     @if ($row->status == "0")
@@ -71,13 +71,13 @@
                                     <td><span class="badge rounded-pill bg-success">Finished</span></td>
                                     @endif
                                     <td>
-                                        <a href="{{url('admin/complaints/'.$row->id)}}"
+                                        <a href="{{url('admin/reports/'.$row->id)}}"
                                             class="btn btn-danger btn-rounded waves-effect waves-light">
                                             <i class="bx bx-edit font-size-16 align-middle"></i>
                                         </a>
                                         <a href="javascript: void(0);"
                                             class="btn btn-warning btn-rounded waves-effect waves-light btn-delete"
-                                            title="Delete Data" complaints-id="{{$row->id}}">
+                                            title="Delete Data" reports-id="{{$row->id}}">
                                             <i class="bx bx-trash-alt font-size-16 align-middle"></i>
                                         </a>
                                     </td>
@@ -103,7 +103,7 @@
 <script src="{{asset('assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 <script>
 $('.btn-delete').click(function() {
-    var complaints_id = $(this).attr('complaints-id');
+    var reports_id = $(this).attr('reports-id');
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: 'btn btn-success mt-2',
@@ -124,7 +124,7 @@ $('.btn-delete').click(function() {
         buttonsStyling: !1
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location = "{{url('admin/complaints/delete')}}/" + complaints_id + "";
+            window.location = "{{url('admin/reports/delete')}}/" + reports_id + "";
         } else if (
             result.dismiss === Swal.DismissReason.cancel
         ) {

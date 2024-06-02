@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Complaint;
+use App\Models\Report;
 use App\Models\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
@@ -11,16 +11,16 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        $data['count_complaint'] = Complaint::count();
-        return view('frontend.complaint.index', $data);
+        $data['count_report'] = Report::count();
+        return view('frontend.report.index', $data);
     }
 
-    public function add_complaint()
+    public function add_report()
     {
-        return view('frontend.complaint.add');
+        return view('frontend.report.add');
     }
 
-    public function save_complaint(Request $request)
+    public function save_report(Request $request)
     {
         $this->validate($request, [
             'name' => 'required|min:2',
@@ -28,41 +28,41 @@ class FrontendController extends Controller
             'photo' => 'required',
         ]);
 
-        $complaint = new Complaint;
-        $complaint->contents_of_the_report = $request->contents_of_the_report;
-        $complaint->name = $request->name;
-        $complaint->status_karyawan = $request->status_karyawan;
-        $complaint->departemen = $request->departemen;
-        $complaint->kategori_bahaya = $request->kategori_bahaya;
+        $report = new Report;
+        $report->contents_of_the_report = $request->contents_of_the_report;
+        $report->name = $request->name;
+        $report->status_karyawan = $request->status_karyawan;
+        $report->departemen = $request->departemen;
+        $report->kategori_bahaya = $request->kategori_bahaya;
         $photo = $request->file('photo');
-        $tujuan_upload = 'avatar_complaint';
+        $tujuan_upload = 'avatar_report';
         $photo_name = time() . "_" . $photo->getClientOriginalName();
         $photo->move($tujuan_upload, $photo_name);
-        $complaint->photo = $photo_name;
-        $complaint->status = '0';
-        $complaint->date_complaint = Date::now()->format('Y-m-d');
+        $report->photo = $photo_name;
+        $report->status = '0';
+        $report->date_report = Date::now()->format('Y-m-d');
         
         // Hapus assignment society_id
-        $complaint->nik = 'default_nik';
+        $report->nik = 'default_nik';
         
-        $complaint->save();
+        $report->save();
 
         $response = new Response;
-        $response->complaint_id = $complaint->id;
+        $response->report_id = $report->id;
         $response->save();
 
-        return redirect()->back()->with(['success' => 'Complaint has been saved !']);
+        return redirect()->back()->with(['success' => 'Report has been saved !']);
     }
 
-    public function complaint()
+    public function report()
     {
-        $data['complaint'] = Complaint::all();
-        return view('frontend.complaint.index1', $data);
+        $data['report'] = Report::all();
+        return view('frontend.report.index1', $data);
     }
 
-    public function detail_complaint($id)
+    public function detail_report($id)
     {
-        $data['complaint'] = Complaint::findOrFail($id);
-        return view('frontend.complaint.detail', $data);
+        $data['report'] = Report::findOrFail($id);
+        return view('frontend.report.detail', $data);
     }
 }

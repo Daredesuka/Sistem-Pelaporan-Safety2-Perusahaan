@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComplaintTable extends Migration
+class CreateReportTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateComplaintTable extends Migration
      */
     public function up()
     {
-        Schema::create('complaint', function (Blueprint $table) {
+        Schema::create('report', function (Blueprint $table) {
             $table->id();
-            $table->date('date_complaint');
+            $table->date('date_report');
             $table->string('nik');
+            $table->string('name');
+            $table->string('status_karyawan');
+            $table->string('departemen');
+            $table->string('kategori_bahaya');
             $table->text('contents_of_the_report');
             $table->string('photo');
             $table->enum('status', ['0', 'process', 'finished']);
@@ -33,6 +37,6 @@ class CreateComplaintTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('complaint');
+        Schema::dropIfExists('report');
     }
 }

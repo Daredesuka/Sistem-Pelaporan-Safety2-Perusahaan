@@ -15,8 +15,8 @@ class CreateResponseTable extends Migration
     {
         Schema::create('response', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('complaint_id')->nullable();
-            $table->foreign('complaint_id')->references('id')->on('complaint')->onDelete('cascade');
+            $table->unsignedBigInteger('report_id')->nullable();
+            $table->foreign('report_id')->references('id')->on('report')->onDelete('cascade');
             $table->date('response_date');
             $table->text('response');
             $table->unsignedBigInteger('user_id')->nullable();

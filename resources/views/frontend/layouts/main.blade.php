@@ -98,25 +98,25 @@
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button">
-                                    <i class="bx bx-customize me-2"></i><span key="t-apps">Complaints</span>
+                                    <i class="bx bx-customize me-2"></i><span key="t-apps">Reports</span>
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-pages">
 
-                                    <a href="{{route('complaint')}}" class="dropdown-item" key="t-calendar">List
-                                        Complaints</a>
+                                    <a href="{{route('report')}}" class="dropdown-item" key="t-calendar">List
+                                        Reports</a>
 
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button">
-                                    <i class="bx bx-customize me-2"></i><span key="t-apps">Add Complaints</span>
+                                    <i class="bx bx-customize me-2"></i><span key="t-apps">Add Reports</span>
                                     <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-pages">
 
-                                    <a href="{{route('add_complaint')}}" class="dropdown-item" key="t-calendar">Add
-                                        Complaints</a>
+                                    <a href="{{route('add_report')}}" class="dropdown-item" key="t-calendar">Add
+                                        Reports</a>
 
                                 </div>
                             </li>
@@ -136,11 +136,11 @@
                         <div class="col-sm-6">
                             <script>
                             document.write(new Date().getFullYear())
-                            </script> © Feyto Frizky Dewangga.
+                            </script> © Ogie Kukuh Yuwono.
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Feyto Frizky Dewangga
+                                Design & Develop by Ogie Kukuh Yuwono
                             </div>
                         </div>
                     </div>

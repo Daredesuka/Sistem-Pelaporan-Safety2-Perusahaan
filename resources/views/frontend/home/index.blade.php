@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Online Public Complaint Service</title>
+    <title>Company Reporting Safety</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
@@ -42,7 +42,7 @@
                 <ul>
                     <li class="active"><a href="{{url('/')}}">Home</a></li>
                     <li><a href="#procedures">Procedures</a></li>
-                    <li><a href="{{url('user/complaint/add')}}">Report</a></li>
+                    <li><a href="{{url('user/report/add')}}">Report</a></li>
 
 
                 </ul>
@@ -118,14 +118,14 @@
 
         <div class="container py-4">
             <div class="copyright">
-                &copy; Copyright <strong><span>Feyto Dewangga</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Ogie Kukuh Y</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
-                Designed by <a href="#">Feyto Dewangga</a>
+                Designed by <a href="#">Ogie Kukuh Y</a>
             </div>
         </div>
     </footer><!-- End Footer -->

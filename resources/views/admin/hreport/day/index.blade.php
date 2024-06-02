@@ -16,11 +16,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Report Day</h4>
+                    <h4 class="mb-sm-0 font-size-18">History Report</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item active">Report Day</li>
+                            <li class="breadcrumb-item active">History Report</li>
                         </ol>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
         @endif
         <br>
         <div class="row">
-            <form action="{{url('admin/report/day/search')}}" method="GET" enctype="multipart/form-data">
+            <form action="{{url('admin/hreport/day/search')}}" method="GET" enctype="multipart/form-data">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-xl-12">
@@ -60,7 +60,7 @@
                                         <label for="price" class="col-md-2 col-form-label"></label>
                                         <div class="col-md-10">
                                             <button class="btn btn-success" type="submit"> Search</button>
-                                            <a href="{{url('admin/report/day/cetakpdf/?date1='.Request::get('date1').'&date2='.Request::get('date2'))}}"
+                                            <a href="{{url('admin/hreport/day/cetakpdf/?date1='.Request::get('date1').'&date2='.Request::get('date2'))}}"
                                                 class="btn btn-warning" target="_blank">Export PDF</a>
                                         </div>
                                     </div>
@@ -95,7 +95,7 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$item->nik}}</td>
                                     <td>{{$item->contents_of_the_report}}</td>
-                                    <td>{{$item->date_complaint}}</td>
+                                    <td>{{$item->date_report}}</td>
                                     @if ($item->status == "0")
                                     <td><span class="badge rounded-pill bg-danger">Unprocessed</span></td>
                                     @elseif($item->status == 'process')
