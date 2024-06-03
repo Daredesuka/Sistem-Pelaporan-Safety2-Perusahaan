@@ -58,6 +58,7 @@
             <h1><span>Company Safety Reporting</spa>
             </h1>
             <h2>Drop your problem report here, we'll process it quickly.</h2>
+            <a href="{{url('user/report/add')}}" class="btn btn-primary btn-lg">Report</a>
         </div>
     </section><!-- End Hero -->
 
