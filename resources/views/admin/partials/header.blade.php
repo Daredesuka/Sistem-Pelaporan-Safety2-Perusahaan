@@ -12,13 +12,6 @@
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
-
-        </div>
-
-        <div class="dropdown d-none d-lg-inline-block ms-1">
-            <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
-                <i class="bx bx-fullscreen"></i>
-            </button>
         </div>
 
         <div class="dropdown d-inline-block">
@@ -38,6 +31,5 @@
                         key="t-logout">Logout</span></a>
             </div>
         </div>
-    </div>
     </div>
 </header>
