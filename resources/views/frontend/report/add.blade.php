@@ -96,8 +96,8 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="contents_of_the_report" class="col-md-2 col-form-label">Contents of
-                                            the report</label>
+                                        <label for="contents_of_the_report" class="col-md-2 col-form-label">Isi
+                                            Laporan</label>
                                         <div class="col-md-10">
                                             <textarea class="form-control" rows="8" cols="50"
                                                 name="contents_of_the_report" id="contents_of_the_report"></textarea>

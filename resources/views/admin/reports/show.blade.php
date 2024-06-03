@@ -112,7 +112,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Content Of The Report</td>
+                                                    <td>Isi Laporan</td>
                                                     <td>
                                                         <a href="javascript::void(0)" id="inline-username"
                                                             data-type="text" data-pk="1"
