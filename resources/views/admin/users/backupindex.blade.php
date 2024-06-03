@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Management User | Company Report Safety')
+@section('title','Management User | CSR')
 @section('css')
 <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
     type="text/css" />
@@ -177,7 +177,7 @@ $(function(e) {
 
         $.ajax({
             url: "{{route('users.deleteSelected ')}}",
-            type: 'DELETE'
+            type: 'DELETE',
             data: {
                 ids: allids,
                 _token: $('input[name=_token]').val()

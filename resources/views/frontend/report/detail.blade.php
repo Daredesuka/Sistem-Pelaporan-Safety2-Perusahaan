@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-@section('title','Detail Report')
+@section('title','Detail Report | CSR')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">

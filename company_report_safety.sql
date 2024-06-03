@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Mar 2024 pada 04.17
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 7.4.33
+-- Waktu pembuatan: 03 Jun 2024 pada 03.54
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,56 +24,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `complaint`
---
-
-CREATE TABLE `report` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `date_complaint` date NOT NULL,
-  `nik` varchar(255) NOT NULL,
-  `contents_of_the_report` text NOT NULL,
-  `photo` varchar(255) NOT NULL,
-  `status` enum('0','process','finished') NOT NULL,
-  `society_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `complaint`
---
-
-INSERT INTO `complaint` (`id`, `date_complaint`, `nik`, `contents_of_the_report`, `photo`, `status`, `society_id`, `created_at`, `updated_at`) VALUES
-(1, '2021-03-31', '3320090507890001', 'Contoh', '1617197684_wkwkwkw.png', 'finished', 3, '2021-03-31 06:34:44', '2024-01-05 09:11:30'),
-(6, '2021-03-31', '3320090507890001', 'sasasasasasasasa', '1617213291_si.png', '0', 3, '2021-03-31 10:54:51', '2021-03-31 10:54:51'),
-(7, '2024-01-05', '405260211990007', 'Pencuri Hatiku', '1704471718_5d1f26d8e7bba.jpg', 'process', 4, '2024-01-05 09:21:58', '2024-01-05 09:29:18'),
-(8, '2024-03-07', '405260211990007', 'Terjadi Kecelakaan', '1709781194_images.jpg', 'finished', 4, '2024-03-06 20:13:14', '2024-03-06 20:15:14');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `failed_jobs`
---
-
-CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `level`
 --
 
 CREATE TABLE `level` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -94,7 +50,7 @@ INSERT INTO `level` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -107,11 +63,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2019_08_19_000000_create_failed_jobs_table', 1),
 (3, '2021_03_28_031232_create_level_table', 1),
 (4, '2021_03_28_031306_create_users_table', 1),
-(5, '2021_03_31_055245_create_society_table', 2),
-(6, '2021_03_31_064228_create_complaint_table', 3),
+(6, '2021_03_31_064228_create_report_table', 3),
 (7, '2021_03_31_073053_create_users_table', 4),
 (8, '2021_03_31_074550_create_complaint_table', 5),
-(9, '2021_03_31_074755_create_society_table', 6),
 (10, '2021_03_31_074925_create_complaint_table', 7),
 (11, '2021_03_31_155350_create_response_table', 8),
 (12, '2021_03_31_160001_create_response_table', 9);
@@ -119,14 +73,30 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Struktur dari tabel `report`
 --
 
-CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
+CREATE TABLE `report` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `date_report` date NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_karyawan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `departemen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori_bahaya` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contents_of_the_report` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lokasi_kejadian` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('0','process','finished') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `report`
+--
+
+INSERT INTO `report` (`id`, `date_report`, `name`, `status_karyawan`, `departemen`, `kategori_bahaya`, `contents_of_the_report`, `lokasi_kejadian`, `photo`, `status`, `created_at`, `updated_at`) VALUES
+(28, '2024-06-02', 'Rehan', 'Pegawai Tetap', 'Maintenance', 'Kondisi_Tidak_Aman', 'Ada yang bertengkar', 'di ruangan', '1717334391_pngtree-japanese-professional-business-man-fight-with-business-partner-in-the-office-picture-image_2486763.png', 'process', '2024-06-02 06:19:51', '2024-06-02 18:54:15');
 
 -- --------------------------------------------------------
 
@@ -136,9 +106,9 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `response` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `complaint_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `report_id` bigint(20) UNSIGNED DEFAULT NULL,
   `response_date` date DEFAULT NULL,
-  `response` text DEFAULT NULL,
+  `response` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -148,40 +118,8 @@ CREATE TABLE `response` (
 -- Dumping data untuk tabel `response`
 --
 
-INSERT INTO `response` (`id`, `complaint_id`, `response_date`, `response`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 1, '2024-01-05', 'jshdjhsjdhshgd', 2, '2021-03-31 16:43:24', '2024-01-05 09:11:22'),
-(4, 6, '2021-03-31', 'dsdsadsadadas', 1, '2021-03-31 10:54:51', '2021-03-31 10:57:44'),
-(5, 7, '2024-01-05', 'Tunggu Sampai Jomblo Bapuk', 1, '2024-01-05 09:21:58', '2024-01-05 09:29:57'),
-(6, 8, '2024-03-07', 'Sudah Kami Atasi Dan Menangkap Pelaku Kecelakaan', 2, '2024-03-06 20:13:14', '2024-03-06 20:15:14');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `society`
---
-
-CREATE TABLE `society` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nik` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `phone_number` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `society`
---
-
-INSERT INTO `society` (`id`, `nik`, `name`, `username`, `photo`, `password`, `phone_number`, `address`, `created_at`, `updated_at`) VALUES
-(1, '23723654635465', 'gsfagfsg', 'sashags', '1617177284_Foto formal.jpg', '$2y$10$KSC.8qWGyclU09AsWwrXUupGGpQE.mcGR/XAe5x.wijTaTYQLDmXu', '2362365', 'sasgahgs', '2021-03-31 00:54:44', '2021-03-31 00:54:44'),
-(2, '6463435463546', 'feyto', 'feyto', '1617183923_si.png', '$2y$10$3uaecEENfmjgr/czPb4cleX9lM5zohwPnJsPFFCHm/m39JIla7l9a', '028323728738', 'Jepara', '2021-03-31 02:45:23', '2021-03-31 02:45:23'),
-(3, '3320090507890001', 'Aan Febriyan', 'admin@gmail.com', '1617187306_pikri.png', '$2y$10$zo1/l3yyn934nPh9azcUXe/j9yb5FZ/vU6B/78e/7VRDBRxThMaIq', '08058848239', 'K', '2021-03-31 03:41:46', '2021-03-31 03:41:46'),
-(4, '405260211990007', 'User', 'user', '1704471437_user1.png', '$2y$10$aX9twyKF.F9XP9TyxxTuB.YOKH6MGhEHzaCcKmxglDfxFzuzZeU5q', '08665542321', 'Bandung', '2024-01-05 09:17:17', '2024-01-05 09:17:17');
+INSERT INTO `response` (`id`, `report_id`, `response_date`, `response`, `user_id`, `created_at`, `updated_at`) VALUES
+(24, 28, '2024-06-03', 'lagi diproses', 4, '2024-06-02 06:19:51', '2024-06-02 18:54:15');
 
 -- --------------------------------------------------------
 
@@ -191,14 +129,14 @@ INSERT INTO `society` (`id`, `nik`, `name`, `username`, `photo`, `password`, `ph
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `officer_name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `phone_number` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL,
+  `officer_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `level_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -208,26 +146,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `officer_name`, `email`, `username`, `password`, `phone_number`, `photo`, `level_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'admin@gmail.com', 'Administrator', '$2y$10$bc5l5Is.lMXEDgfAchOrCOEVcNOw8HHmaFXWiNXzlUTlqe4lJJcLi', '088228740010', '1617176493_Foto formal.jpg', 1, NULL, '2021-03-31 00:32:59', '2021-03-31 00:41:33'),
-(2, 'officer', 'officer@gmail.com', 'Officer', '$2y$10$kiRzS3jVWoBguVNHUG8nj.Du3rXyPMplnxYHFPgbZKLNCB3IlPZom', '088228740010', '1617176393_09597c6863c22f68cc63cbb2c6b42a72.jpg', 2, NULL, '2021-03-31 00:33:00', '2021-03-31 00:39:53');
+(3, 'Saya', 'Saya123@gmail.com', 'Saya123', '$2y$10$upw.YAZrWrLIZKfUkCLDN.5P4EOk6HWLwde3uQkRkw2JWDFdxTQEC', '0888888888887', '1717262599_Screenshot (667).png', 1, NULL, '2024-06-01 10:23:19', '2024-06-01 10:23:19'),
+(4, 'Admin', 'admin123@gmail.com', 'admin123', '$2y$10$8GMCv0hmtrvJAx359ibkFO1V9wIjcW9x8ZNi2J8jfk8eo2sxWat7G', '087756432188', '1717299615_wallpapersden.com_moon-knight-hd-marvel_2500x3205.jpg', 1, NULL, '2024-06-01 20:40:15', '2024-06-01 20:40:15');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indeks untuk tabel `complaint`
---
-ALTER TABLE `complaint`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `complaint_society_id_foreign` (`society_id`);
-
---
--- Indeks untuk tabel `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
 -- Indeks untuk tabel `level`
@@ -242,24 +166,18 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
+-- Indeks untuk tabel `report`
 --
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
+ALTER TABLE `report`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `response`
 --
 ALTER TABLE `response`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `response_complaint_id_foreign` (`complaint_id`),
+  ADD KEY `response_complaint_id_foreign` (`report_id`),
   ADD KEY `response_user_id_foreign` (`user_id`);
-
---
--- Indeks untuk tabel `society`
---
-ALTER TABLE `society`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `users`
@@ -271,18 +189,6 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
-
---
--- AUTO_INCREMENT untuk tabel `complaint`
---
-ALTER TABLE `complaint`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT untuk tabel `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `level`
@@ -297,38 +203,32 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT untuk tabel `report`
+--
+ALTER TABLE `report`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
 -- AUTO_INCREMENT untuk tabel `response`
 --
 ALTER TABLE `response`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT untuk tabel `society`
---
-ALTER TABLE `society`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Ketidakleluasaan untuk tabel `complaint`
---
-ALTER TABLE `complaint`
-  ADD CONSTRAINT `complaint_society_id_foreign` FOREIGN KEY (`society_id`) REFERENCES `society` (`id`) ON DELETE CASCADE;
-
---
 -- Ketidakleluasaan untuk tabel `response`
 --
 ALTER TABLE `response`
-  ADD CONSTRAINT `response_complaint_id_foreign` FOREIGN KEY (`complaint_id`) REFERENCES `complaint` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `response_complaint_id_foreign` FOREIGN KEY (`report_id`) REFERENCES `report` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `response_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --

@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Reports | Public Reports')
+@section('title','Reports | CSR')
 @section('css')
 <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
     type="text/css" />

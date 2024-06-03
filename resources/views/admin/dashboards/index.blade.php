@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Dashboard | Public Reports')
+@section('title','Dashboard | CSR')
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
@@ -32,7 +32,7 @@
                             <div class="col-7">
                                 <div class="text-primary p-3">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p>Public Reports</p>
+                                    <p>Company Safety Reporting</p>
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">

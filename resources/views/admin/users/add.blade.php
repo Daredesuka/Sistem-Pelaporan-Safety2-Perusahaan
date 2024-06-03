@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title','Management User | Company Report Safety')
+@section('title','Management User | CSR')
 @section('css')
 
 @endsection
