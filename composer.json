@@ -7,6 +7,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "anhskohbo/no-captcha": "^3.3",
+        "aws/aws-sdk-php": "^3.309",
         "barryvdh/laravel-dompdf": "^0.9.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
@@ -14,6 +15,7 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravel/ui": "2.3",
+        "league/flysystem-aws-s3-v3": "1.0",
         "spatie/laravel-permission": "^4.0"
     },
     "require-dev": {

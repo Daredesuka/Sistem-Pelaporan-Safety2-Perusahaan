@@ -6,6 +6,7 @@ use App\Models\Report;
 use App\Models\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Storage;
 
 class FrontendController extends Controller
 {
@@ -39,11 +40,13 @@ class FrontendController extends Controller
         $report->departemen = $request->departemen;
         $report->kategori_bahaya = $request->kategori_bahaya;
         $report->lokasi_kejadian = $request->lokasi_kejadian;
+
         $photo = $request->file('photo');
         $tujuan_upload = 'avatar_report';
         $photo_name = time() . "_" . $photo->getClientOriginalName();
         $photo->move($tujuan_upload, $photo_name);
         $report->photo = $photo_name;
+        
         $report->status = '0';
         $report->date_report = Date::now()->format('Y-m-d');
         
