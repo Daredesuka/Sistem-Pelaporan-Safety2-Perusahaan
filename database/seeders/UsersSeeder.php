@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Level;
 use Illuminate\Support\Facades\Hash;
 
 class UsersSeeder extends Seeder
@@ -15,6 +16,8 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(RoleSeeder::class);
+        $this->call(UsersSeeder::class);
         $init = new User;
         $init->officer_name = "Admin";
         $init->username = "admin123";
