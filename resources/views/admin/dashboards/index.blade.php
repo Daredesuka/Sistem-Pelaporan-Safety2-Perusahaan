@@ -183,12 +183,18 @@
 
     </div>
 </div>
-<?php
+
+@php
+$th = [];
+$report1 = [];
+
+if (!empty($tahun)) {
 foreach ($tahun as $row) {
-    $th[] = $row->Tahun;
-    $report1[] = $row->pay_total;
-    }    
-?>
+$th[] = $row->Tahun;
+$report1[] = $row->pay_total;
+}
+}
+@endphp
 
 @endsection
 @push('script')

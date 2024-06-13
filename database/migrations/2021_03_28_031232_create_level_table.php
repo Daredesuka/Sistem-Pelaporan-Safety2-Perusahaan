@@ -19,6 +19,12 @@ class CreateLevelTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+        DB::table('level')->insert([
+            'name' => 'Administrator',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
     }
 
     /**
